@@ -15,9 +15,11 @@ options.add_experimental_option('detach', True)
 # Initialize the WebDriver
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
+# Define the base URL
+base_url = 'https://www.tradingview.com/chart/?symbol='
 # Define the sources and currencies you want to capture
 sources = ['BITSTAMP', 'COINBASE', 'BINANCE', 'CRYPTO', 'BITFINEX', 'KRAKEN', 'GEMINI']
-currencies = ['BTCUSD', 'ETHUSD', 'SOLUSD']
+tickers = ['BTCUSD', 'ETHUSD', 'SOLUSD']
 
 for source in sources:
     # Get the current working directory
@@ -39,10 +41,10 @@ for source in sources:
         print(f"Error creating directory {path}: {e}")
         continue
 
-    for currency in currencies:
+    for ticker in tickers:
         try:
             # Construct the URL for the current source and currency
-            url = 'https://www.tradingview.com/chart/?symbol=' + source + '%3A' + currency
+            url = base_url + source + '%3A' + ticker
             # Navigate to the URL
             driver.get(url)
             # Maximize the browser window to ensure the chart is fully visible
@@ -50,10 +52,10 @@ for source in sources:
             # Wait 2 seconds to ensure the page has loaded completely
             time.sleep(3)
             # Save a screenshot of the chart
-            driver.save_screenshot(path + '/' + currency + '.png')
-            print(currency, 'chart by', source, 'captured successfully')
+            driver.save_screenshot(path + '/' + ticker + '.png')
+            print(ticker, 'chart by', source, 'captured successfully')
         except Exception as e:
-            print(f"Error capturing {currency} chart by {source}: {e}")
+            print(f"Error capturing {ticker} chart by {source}: {e}")
 
 # Close the WebDriver
 driver.quit()
