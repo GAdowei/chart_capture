@@ -25,7 +25,7 @@ You can install the required libraries (except the standard libraries) using pip
 
 To use the script, simply run it with Python:
 
-`python chart_screenshot_capturer.py`
+`python chapture_gpt.py`
 
 
 ## Headless Mode 
