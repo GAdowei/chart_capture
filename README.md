@@ -1,4 +1,4 @@
-# Chart Screenshot Bot
+# Chart Capture Bot
 
 This Python bot automates the process of capturing screenshots of financial charts from TradingView for a predefined list of sources and currencies. It's designed to assist in quickly gathering visual data for analysis or AI vision.
 
