@@ -2,6 +2,7 @@
 
 This Python script automates the process of capturing screenshots of financial charts from TradingView for a predefined list of sources and currencies. It's designed to assist in quickly gathering visual data for analysis or AI vision.
 
+!['BTCUSD Chart Screenshot, Data source: BINANCE'](assets/BINANCE/BTCUSD)
 
 ## Setup
 
@@ -49,6 +50,7 @@ You can easily modify this list by adding new sources (e.g., NASDAQ) and tickers
 ## Assets Folder 
 
 The script automatically creates an assets folder in the current working directory, organized by source, to save the captured screenshots. This folder is recreated on each run, so there's no need to delete it manually before rerunning the script. This ensures you always have the latest screenshots without old data interference.
+
 
 
 ## Contributing 
