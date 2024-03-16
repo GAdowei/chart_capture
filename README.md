@@ -25,7 +25,7 @@ You can install the required libraries (except the standard libraries) using pip
 
 To use the script, simply run it with Python:
 
-`python chapture_gpt.py`
+`python capture_gpt.py`
 
 
 ## Headless Mode 
